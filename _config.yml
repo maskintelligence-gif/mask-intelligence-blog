@@ -117,7 +117,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "We believe every business has unique potential waiting to be unlocked. Our mission is to remove the barriers of digital complexity."
   location         : "UGANDA, KAMPALA"
-  email            :
+  email            : "maskintelligence@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
