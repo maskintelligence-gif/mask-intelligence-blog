@@ -1,1 +1,252 @@
+<footer class="simple-footer">
+  <div class="footer-top">
+    <!-- Formspree Email Signup - USING YOUR WORKING ENDPOINT -->
+    <div class="email-signup">
+      <h4>Get Updates</h4>
+      <form id="footerNewsletterForm" action="https://formspree.io/f/xldqaaoe" method="POST">
+        <!-- Same hidden fields as your working newsletter -->
+        <input type="hidden" name="_subject" value="New Newsletter Subscriber - Mask Intelligence">
+        <input type="hidden" name="_replyto" value="">
+        <input type="hidden" name="_format" value="plain">
+        <input type="text" name="_gotcha" style="display:none">
+        <input type="hidden" name="_source" value="mask_intelligence_footer">
+        
+        <!-- Email field -->
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="small">No spam. Unsubscribe anytime.</p>
+    </div>
+    
+    <!-- RSS/Feedly Options -->
+    <div class="feed-options">
+      <h4>Follow via RSS</h4>
+      <div class="feed-links">
+        <a href="/feed.xml" class="rss-link">
+          <i class="fas fa-rss"></i> RSS Feed
+        </a>
+        <a href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fmaskintelligence-gif.github.io%2Fmask-intelligence-blog%2Ffeed.xml" 
+           class="feedly-link" target="_blank">
+          <i class="fas fa-plus"></i> Add to Feedly
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2013-{{ site.time | date: '%Y' }} Mask Intelligence</p>
+    <p class="tagline">Unveiling Digital Potential Through Intelligent Solutions</p>
+  </div>
+</footer>
 
+<style>
+/* SIMPLE FOOTER STYLES - LIGHT VERSION */
+.simple-footer {
+  background: #f8fafc;
+  color: #1f2937;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-top {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.email-signup, .feed-options {
+  flex: 1;
+  min-width: 250px;
+}
+
+h4 {
+  margin: 0 0 1rem;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+/* Formspree Form */
+.email-signup form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.email-signup input[type="email"] {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  background: white;
+  color: #1f2937;
+}
+
+.email-signup input[type="email"]::placeholder {
+  color: #6b7280;
+}
+
+.email-signup button {
+  padding: 10px 20px;
+  background: #f59e0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.email-signup button:hover {
+  background: #e69500;
+}
+
+.email-signup button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* RSS/Feedly Links */
+.feed-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rss-link, .feedly-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.rss-link {
+  background: #f26522;
+}
+
+.feedly-link {
+  background: #2bb24c;
+}
+
+.rss-link:hover, .feedly-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.tagline {
+  color: #f59e0b;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .email-signup form {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+// USING SIMILAR LOGIC TO YOUR WORKING NEWSLETTER
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('footerNewsletterForm');
+  
+  if (form) {
+    const emailInput = form.querySelector('input[type="email"]');
+    const replyToInput = form.querySelector('input[name="_replyto"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // Sync replyto with email
+    emailInput.addEventListener('input', function() {
+      replyToInput.value = this.value;
+    });
+    
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      
+      const originalText = submitBtn.textContent;
+      
+      // Show loading state
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          // Success - match your newsletter's success behavior
+          submitBtn.textContent = '✓ Subscribed!';
+          submitBtn.style.backgroundColor = '#10b981';
+          form.reset();
+          
+          // Reset after 3 seconds
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.disabled = false;
+          }, 3000);
+          
+        } else {
+          // Try to parse error
+          const result = await response.json().catch(() => ({}));
+          throw new Error(result.error || `Error: ${response.status}`);
+        }
+        
+      } catch (error) {
+        console.error('Footer form error:', error);
+        
+        // Show error state
+        submitBtn.textContent = '✗ Try Again';
+        submitBtn.style.backgroundColor = '#ef4444';
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+          submitBtn.disabled = false;
+        }, 2000);
+      }
+    });
+  }
+});
+</script>
