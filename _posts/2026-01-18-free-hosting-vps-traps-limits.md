@@ -1,4 +1,4 @@
-```markdown
+
 ---
 title: "Before You Try Free Hosting or Free VPS: Traps and Limits You Should Know"
 excerpt: "The hidden costs and risks of 'free' hosting that could sink your project before it even starts."
