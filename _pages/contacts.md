@@ -24,7 +24,7 @@ header:
   <input type="text" id="contact_name" placeholder="Your Name" required>
   <input type="email" id="contact_email" placeholder="Your Email" required>
   <textarea id="contact_msg" placeholder="Your Message" rows="4" required></textarea>
-  <button type="submit">📧 Send Email</button>
+  <button type="submit">Send Email</button>
 </form>
 
 <script>
