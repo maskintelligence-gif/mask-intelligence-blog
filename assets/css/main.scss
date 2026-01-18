@@ -5,5 +5,66 @@ search: false
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+---
+# Front matter ensures Jekyll processes this
+---
+
+/* custom color overrides */
+:root {
+  /* Primary theme colors */
+  --primary-color: #2563eb; /* Blue instead of default purple */
+  --primary-color-dark: #1d4ed8;
+  --primary-color-light: #60a5fa;
+  
+  /* Text colors */
+  --text-color: #1f2937; /* Dark gray */
+  --text-color-light: #6b7280;
+  
+  /* Background colors */
+  --background-color: #ffffff;
+  --background-alt-color: #f9fafb;
+  
+  /* Link colors */
+  --link-color: var(--primary-color);
+  --link-color-hover: var(--primary-color-dark);
+  
+  /* Border colors */
+  --border-color: #e5e7eb;
+}
+
+/* If you prefer HEX values directly in classes */
+$primary-color: #2563eb !default;
+$background-color: #ffffff !default;
+$text-color: #1f2937 !default;
+$border-color: #e5e7eb !default;
+
+/* Apply to specific elements */
+.page__hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+}
+
+/* Change button colors */
+.btn--primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  
+  &:hover {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+  }
+}
+
+/* Change header/footer colors */
+.masthead {
+  background-color: var(--primary-color);
+  
+  a {
+    color: white;
+  }
+}
+
+.footer {
+  background-color: var(--background-alt-color);
+}
