@@ -1,16 +1,17 @@
 <footer class="simple-footer">
   <div class="footer-top">
-    <!-- Formspree Email Signup -->
+    <!-- Formspree Email Signup - USING YOUR WORKING ENDPOINT -->
     <div class="email-signup">
       <h4>Get Updates</h4>
-      <form action="https://formspree.io/f/maskintelligence@gmail.com" method="POST">
-        <!-- REQUIRED Formspree fields -->
-        <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+      <form id="footerNewsletterForm" action="https://formspree.io/f/xldqaaoe" method="POST">
+        <!-- Same hidden fields as your working newsletter -->
+        <input type="hidden" name="_subject" value="New Newsletter Subscriber - Mask Intelligence">
         <input type="hidden" name="_replyto" value="">
         <input type="hidden" name="_format" value="plain">
         <input type="text" name="_gotcha" style="display:none">
+        <input type="hidden" name="_source" value="mask_intelligence_footer">
         
-        <!-- Visible fields -->
+        <!-- Email field -->
         <input type="email" name="email" placeholder="Your email" required>
         <button type="submit">Subscribe</button>
       </form>
@@ -175,15 +176,16 @@ h4 {
 </style>
 
 <script>
-// Fixed form submission
+// USING SIMILAR LOGIC TO YOUR WORKING NEWSLETTER
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('.email-signup form');
+  const form = document.getElementById('footerNewsletterForm');
   
   if (form) {
-    // Set replyto from email input
     const emailInput = form.querySelector('input[type="email"]');
     const replyToInput = form.querySelector('input[name="_replyto"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
     
+    // Sync replyto with email
     emailInput.addEventListener('input', function() {
       replyToInput.value = this.value;
     });
@@ -191,76 +193,58 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      const button = this.querySelector('button');
-      const originalText = button.textContent;
-      const originalBg = button.style.backgroundColor;
-      
-      // Validation
-      if (!emailInput.value || !emailInput.validity.valid) {
-        emailInput.style.borderColor = '#ef4444';
-        emailInput.focus();
+      if (!form.checkValidity()) {
+        form.reportValidity();
         return;
       }
       
+      const originalText = submitBtn.textContent;
+      
       // Show loading state
-      button.textContent = 'Sending...';
-      button.disabled = true;
-      emailInput.style.borderColor = '#d1d5db';
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      const formData = new FormData(form);
       
       try {
-        const formData = new FormData(this);
-        
-        const response = await fetch(this.action, {
+        const response = await fetch(form.action, {
           method: 'POST',
           body: formData,
-          headers: { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
+          headers: { 'Accept': 'application/json' }
         });
         
-        const result = await response.json();
-        
-        if (response.ok && result.ok) {
-          // Success
-          button.textContent = '✓ Subscribed!';
-          button.style.backgroundColor = '#10b981';
-          this.reset();
+        if (response.ok) {
+          // Success - match your newsletter's success behavior
+          submitBtn.textContent = '✓ Subscribed!';
+          submitBtn.style.backgroundColor = '#10b981';
+          form.reset();
           
           // Reset after 3 seconds
           setTimeout(() => {
-            button.textContent = originalText;
-            button.style.backgroundColor = originalBg;
-            button.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.style.backgroundColor = '';
+            submitBtn.disabled = false;
           }, 3000);
           
         } else {
-          throw new Error(result.error || 'Submission failed');
+          // Try to parse error
+          const result = await response.json().catch(() => ({}));
+          throw new Error(result.error || `Error: ${response.status}`);
         }
         
       } catch (error) {
-        console.error('Form error:', error);
+        console.error('Footer form error:', error);
         
-        // Show error
-        button.textContent = '✗ Try Again';
-        button.style.backgroundColor = '#ef4444';
+        // Show error state
+        submitBtn.textContent = '✗ Try Again';
+        submitBtn.style.backgroundColor = '#ef4444';
         
+        // Reset after 2 seconds
         setTimeout(() => {
-          button.textContent = originalText;
-          button.style.backgroundColor = originalBg;
-          button.disabled = false;
+          submitBtn.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+          submitBtn.disabled = false;
         }, 2000);
-      }
-    });
-    
-    // Real-time email validation
-    emailInput.addEventListener('blur', function() {
-      if (this.value && !this.validity.valid) {
-        this.style.borderColor = '#ef4444';
-      } else if (this.value) {
-        this.style.borderColor = '#10b981';
-      } else {
-        this.style.borderColor = '#d1d5db';
       }
     });
   }
