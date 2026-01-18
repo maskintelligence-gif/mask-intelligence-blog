@@ -63,24 +63,13 @@
       <i class="fas fa-envelope"></i>
     </a>
     <a href="https://tel:256791715573" class="phone" target="_blank" title="Phone">
-      <i class="fab fa-tel"></i>
+      <i class="fab fa-contact"></i>
     </a>
   </div>
 </div>
 
 <script>
-// Inject social links into sidebar automatically
-document.addEventListener('DOMContentLoaded', function() {
-  const sidebar = document.querySelector('.sidebar');
-  const socialHTML = document.getElementById('social-injection').innerHTML;
-  
-  if (sidebar) {
-    // Create a new section for social links
-    const socialSection = document.createElement('div');
-    socialSection.className = 'social-sidebar-section';
-    socialSection.innerHTML = socialHTML;
-    
-    // Insert after author profile or at the beginning
+ // Insert after author profile or at the beginning
     const authorProfile = sidebar.querySelector('.author__content');
     if (authorProfile) {
       authorProfile.parentNode.insertBefore(socialSection, authorProfile.nextSibling);
