@@ -5,66 +5,196 @@ search: false
 
 @charset "utf-8";
 
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
----
-# Front matter ensures Jekyll processes this
----
+/* ==========================================================================
+   MASK INTELLIGENCE CUSTOM COLORS
+   ========================================================================== */
 
-/* custom color overrides */
 :root {
-  /* Primary theme colors */
-  --primary-color: #2563eb; /* Blue instead of default purple */
-  --primary-color-dark: #1d4ed8;
-  --primary-color-light: #60a5fa;
+  /* Brand Colors for Mask Intelligence */
+  --primary-color: #2563eb;           /* Professional Blue */
+  --primary-color-dark: #1d4ed8;      /* Darker Blue */
+  --primary-color-light: #93c5fd;     /* Light Blue */
   
-  /* Text colors */
-  --text-color: #1f2937; /* Dark gray */
-  --text-color-light: #6b7280;
+  /* Accent Colors */
+  --accent-color: #8b5cf6;            /* Creative Purple */
+  --success-color: #10b981;           /* Green for success */
   
-  /* Background colors */
+  /* Neutrals */
   --background-color: #ffffff;
-  --background-alt-color: #f9fafb;
-  
-  /* Link colors */
-  --link-color: var(--primary-color);
-  --link-color-hover: var(--primary-color-dark);
-  
-  /* Border colors */
-  --border-color: #e5e7eb;
+  --background-alt-color: #f8fafc;    /* Slightly off-white */
+  --text-color: #1e293b;              /* Dark blue-gray */
+  --text-color-light: #64748b;        /* Medium gray */
+  --border-color: #e2e8f0;            /* Light gray border */
 }
 
-/* If you prefer HEX values directly in classes */
-$primary-color: #2563eb !default;
-$background-color: #ffffff !default;
-$text-color: #1f2937 !default;
-$border-color: #e5e7eb !default;
+/* ==========================================================================
+   LINK STYLES
+   ========================================================================== */
 
-/* Apply to specific elements */
-.page__hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
-}
-
-/* Change button colors */
-.btn--primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+a {
+  color: var(--primary-color);
   
   &:hover {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
+    color: var(--primary-color-dark);
   }
 }
 
-/* Change header/footer colors */
+/* ==========================================================================
+   BUTTON OVERRIDES
+   ========================================================================== */
+
+.btn {
+  &--primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-color-dark);
+      border-color: var(--primary-color-dark);
+    }
+  }
+  
+  &--info {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  
+  &--success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+  }
+}
+
+/* ==========================================================================
+   HEADER/NAVIGATION
+   ========================================================================== */
+
 .masthead {
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  
+  &__menu-item {
+    a {
+      color: var(--text-color);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.greedy-nav {
+  a {
+    color: var(--text-color);
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+  
+  &__toggle {
+    &:hover {
+      background-color: var(--background-alt-color);
+    }
+  }
+}
+
+/* ==========================================================================
+   HERO/HIGHLIGHT AREAS
+   ========================================================================== */
+
+.page__hero {
+  &--overlay {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+  }
+}
+
+.page__title {
+  color: var(--text-color);
+}
+
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+.sidebar {
+  h2, h3, h4, h5, h6 {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+  }
   
   a {
-    color: white;
+    color: var(--primary-color);
+    
+    &:hover {
+      color: var(--primary-color-dark);
+    }
   }
 }
 
-.footer {
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.page__footer {
   background-color: var(--background-alt-color);
+  color: var(--text-color-light);
+  
+  a {
+    color: var(--primary-color);
+    
+    &:hover {
+      color: var(--primary-color-dark);
+    }
+  }
+}
+
+/* ==========================================================================
+   POST/ARCHIVE ITEMS
+   ========================================================================== */
+
+.archive__item {
+  &-title {
+    a {
+      color: var(--text-color);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+  
+  &-excerpt {
+    color: var(--text-color-light);
+  }
+}
+
+/* ==========================================================================
+   CODE/SYNTAX HIGHLIGHTING
+   ========================================================================== */
+
+.highlight {
+  background-color: var(--background-alt-color);
+  border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
 }
