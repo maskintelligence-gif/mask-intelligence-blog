@@ -121,15 +121,3 @@ At Mask Intelligence, we provide end-to-end digital services designed to take yo
 *Includes setup for up to 50 products*
 
 </div>
-
-
-## 🛠️ **Our Process**
-
-```mermaid
-graph LR
-    A[Discovery Call] --> B[Solution Design]
-    B --> C[Proposal & Agreement]
-    C --> D[Implementation]
-    D --> E[Testing & Review]
-    E --> F[Launch & Training]
-    F --> G[Ongoing Support]
