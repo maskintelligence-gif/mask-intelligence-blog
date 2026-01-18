@@ -114,9 +114,9 @@ analytics:
 # Site Author
 author:
   name             : " TEAM MASK"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/maskintelligence-logo.png"
   bio              : "We believe every business has unique potential waiting to be unlocked. Our mission is to remove the barriers of digital complexity."
-  location         : "SOMEWHERE"
+  location         : "UGANDA"
   email            :
   links:
     - label: "Email"
