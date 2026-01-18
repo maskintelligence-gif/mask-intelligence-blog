@@ -13,9 +13,22 @@ excerpt: "We transform digital complexity into strategic advantage through intel
 
 At **Mask Intelligence**, we believe every business has unique potential waiting to be unlocked. In an era of overwhelming digital noise, our mission is clear: **remove the barriers of digital complexity** and reveal the intelligent solutions beneath.
 
-### Why "Mask"?
+### Why Partner With Us?
+🎯
+Clarity from Complexity
+We translate your goals into clear, actionable digital strategies and intuitive user experiences that drive measurable results for your business.
 
-Just as a mask can conceal or reveal identity, digital complexity often masks your business's true potential. We specialize in **unmasking** the intelligent solutions hidden beneath layers of technological overwhelm, data paralysis, and strategy fragmentation.
+⚡
+End-to-End Digital Expertise
+Comprehensive solutions from initial strategy and domain setup to custom development, hosting, and ongoing optimization—all under one roof.
+
+🔧
+Modern Technology Foundation
+Built on proven, contemporary technologies including React.js, Node.js, PostgreSQL, and Firebase to ensure your solution is secure, scalable, and future-ready.
+
+🌍
+Local Insight, Global Standards
+Rooted in Uganda with a deep understanding of the local market landscape, while implementing international best practices in design, development, and user experience.
 
 ## Our Approach
 
@@ -23,7 +36,7 @@ Just as a mask can conceal or reveal identity, digital complexity often masks yo
 
 We don't start with tools or platforms. We start with **intelligence**:
 
-```yaml
+
 Our Process:
   1. Discover → Deep understanding of your business DNA
   2. Analyze → Identify hidden barriers and opportunities  
