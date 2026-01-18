@@ -32,13 +32,13 @@
 </footer>
 
 <style>
-/* SIMPLE FOOTER STYLES */
+/* SIMPLE FOOTER STYLES - LIGHT VERSION */
 .simple-footer {
-  background: var(--unified-bg);
-  color: white;
+  background: #f8fafc; /* Light background */
+  color: #1f2937; /* Dark text */
   padding: 2rem 1rem;
   margin-top: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #e5e7eb; /* Light border */
 }
 
 .footer-top {
@@ -49,7 +49,7 @@
   justify-content: center;
   gap: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .email-signup, .feed-options {
@@ -59,7 +59,7 @@
 
 h4 {
   margin: 0 0 1rem;
-  color: white;
+  color: #1f2937; /* Dark text */
   font-size: 1.1rem;
 }
 
@@ -73,16 +73,20 @@ h4 {
 .email-signup input {
   flex: 1;
   padding: 10px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #d1d5db;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
+  background: white;
+  color: #1f2937; /* Dark text */
+}
+
+.email-signup input::placeholder {
+  color: #6b7280; /* Gray placeholder */
 }
 
 .email-signup button {
   padding: 10px 20px;
-  background: var(--accent);
-  color: white;
+  background: #f59e0b; /* Your accent color */
+  color: white; /* White text on button */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -95,7 +99,7 @@ h4 {
 
 .small {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #6b7280; /* Gray text */
   margin: 0;
 }
 
@@ -113,32 +117,33 @@ h4 {
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
-  color: white;
+  color: white; /* White text on colored buttons */
   transition: all 0.3s;
+  font-weight: 500;
 }
 
 .rss-link {
-  background: #f26522;
+  background: #f26522; /* RSS orange */
 }
 
 .feedly-link {
-  background: #2bb24c;
+  background: #2bb24c; /* Feedly green */
 }
 
 .rss-link:hover, .feedly-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Footer Bottom */
 .footer-bottom {
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: #6b7280; /* Gray text */
   font-size: 0.9rem;
 }
 
 .tagline {
-  color: var(--accent);
+  color: #f59e0b; /* Your accent color */
   margin-top: 5px;
   font-weight: 500;
 }
@@ -166,6 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const button = this.querySelector('button');
       const originalText = button.textContent;
+      const originalBg = button.style.background;
       
       button.textContent = 'Sending...';
       button.disabled = true;
@@ -184,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             button.textContent = originalText;
-            button.style.background = '';
+            button.style.background = originalBg;
             button.disabled = false;
           }, 3000);
         }
