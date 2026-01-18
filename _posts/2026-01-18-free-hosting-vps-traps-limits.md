@@ -18,9 +18,6 @@ tags:
   - security
   - performance
 last_modified_at: 2026-01-18,T08:00:00-05:00
-toc: true
-toc_label: "Table of Contents"
-toc_icon: "cog"
 ---
 
 ## Introduction;
@@ -189,17 +186,16 @@ Ask these questions before committing:
 
 Having migrated projects multiple times, here's what I now check:
 
-```yaml
-Migration Checklist:
+
+## Migration Checklist:
   1. Database export: Clean SQL dump
   2. File transfer: FTP/SFTP access to all files  
   3. DNS control: Ability to point domain elsewhere
   4. Email forwarding: If using provider's email
   5. Config files: Database connections, env variables
   6. Third-party integrations: Update API endpoints
-```
 
-Your Project Deserves Better:
+## Your Project Deserves Better:
 I understand the temptation of free hosting. When you're starting, every dollar counts. But I've learned this the hard way: The most expensive hosting is the free hosting that fails you at a critical moment.
 
 Your project—whether it's a blog, a portfolio, a business idea, or a passion project—represents your time, creativity, and ambition. It deserves a foundation that won't collapse just as it starts bearing weight.
@@ -229,7 +225,6 @@ The bridge between "free" and "paid" isn't just about money—it's about treatin
 
 Your ideas deserve a proper home. If you're done with the limitations of free hosting and ready for a professional, managed solution, get in touch for a consultation.
 
-Contact: maskintelligence@gmail.com | 
-+256 791715573
+Contact: maskintelligence@gmail.com | +256 791715573
 
 ```
