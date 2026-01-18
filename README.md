@@ -1,289 +1,242 @@
-# [Minimal Mistakes Jekyll theme](https://mmistakes.github.io/minimal-mistakes/)
+MASK INTELLIGENCE BLOG: 
+
+🎯 Project Overview
+
+Mask Intelligence is a professional digital solutions blog built with Jekyll and GitHub Pages. This repository serves as both a business website and a content hub for sharing insights on web development, digital transformation, and intelligent business solutions.
+
+🏗️ Technology Stack
+
+· Framework: Jekyll (Minimal Mistakes theme)
+· Hosting: GitHub Pages
+· CSS: Custom SCSS with CSS Variables
+· Forms: Formspree integration
+· Icons: Font Awesome 6
+· Feed: Atom/RSS (Auto-generated)
+
+📁 Repository Structure
+
+```
+mask-intelligence-blog/
+├── _data/                    # Site data (navigation, authors)
+│   └── navigation.yml        # Main & footer navigation
+├── _includes/               # Reusable components
+│   ├── footer.html          # Custom footer (Formspree + RSS)
+│   ├── social-share.html    # Social sharing buttons
+│   └── head/custom.html     # Custom CSS/JS injections
+├── _layouts/               # Page templates
+│   ├── default.html        # Base layout
+│   └── post.html          # Blog post layout
+├── _pages/                # Static pages
+│   ├── about.md           # About Mask Intelligence
+│   ├── services.md        # Services offered
+│   ├── contact.md         # Contact information
+│   └── subscribe.md       # Subscription options
+├── _posts/               # Blog posts
+│   └── 2025-01-19-unveiling-digital-potential.md
+├── assets/
+│   ├── css/
+│   │   └── main.scss     # Custom styles
+│   └── images/           # Site images
+├── _config.yml           # Jekyll configuration
+└── index.html           # Homepage
+```
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
-[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/)
+🚀 Quick Start
 
-Minimal Mistakes is a flexible two-column Jekyll theme, perfect for building personal sites, blogs, and portfolios. As the name implies, styling is purposely minimalistic to be enhanced and customized by you :smile:.
+1. Local Development
+
+```bash
+# Install Ruby and Jekyll
+gem install bundler jekyll
+
+# Clone repository
+git clone https://github.com/maskintelligence-gif/mask-intelligence-blog.git
+
+# Install dependencies
+bundle install
 
-:sparkles: See what's new in the [CHANGELOG](CHANGELOG.md).
+# Run local server
+bundle exec jekyll serve
 
-**Note:** The theme uses the [jekyll-include-cache](https://github.com/benbalter/jekyll-include-cache) plugin which will need to be installed in your `Gemfile` and must be retained in the `plugins` array of `_config.yml`. Otherwise you'll encounter `Unknown tag 'include_cached'` errors at build.
+# Visit http://localhost:4000
+```
 
-[![Minimal Mistakes live preview][2]][1]
+2. GitHub Pages Deployment
 
-[1]: https://mmistakes.github.io/minimal-mistakes/
-[2]: screenshot.png (live preview)
+· Automatic: Push to main branch
+· URL: https://maskintelligence-gif.github.io/mask-intelligence-blog/
+· Build time: ~1-2 minutes after push
 
-![layout examples](screenshot-layouts.png)
+🎨 Customization Guide
 
-## Notable features
+Colors (Edit /assets/css/main.scss)
 
-- Bundled as a "theme gem" for easier installation/upgrading.
-- Compatible with GitHub Pages.
-- Support for Jekyll's built-in Sass/SCSS preprocessor.
-- Nine different skins (color variations).
-- Several responsive layout options (single, archive index, search, splash, and paginated home page).
-- Optimized for search engines with support for [Twitter Cards](https://dev.twitter.com/cards/overview) and [Open Graph](http://ogp.me/) data.
-- Optional [header images](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#headers), [custom sidebars](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#sidebars), [table of contents](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#table-of-contents), [galleries](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#gallery), related posts, [breadcrumb links](https://mmistakes.github.io/minimal-mistakes/docs/configuration/#breadcrumb-navigation-beta), [navigation lists](https://mmistakes.github.io/minimal-mistakes/docs/helpers/#navigation-list), and more.
-- Commenting support (powered by [Disqus](https://disqus.com/), [Facebook](https://developers.facebook.com/docs/plugins/comments), Google+, [Discourse](https://www.discourse.org/), static-based via [Staticman](https://staticman.net/), [utterances](https://utteranc.es/), and [giscus](https://giscus.app/)).
-- [Google Analytics](https://www.google.com/analytics/) support.
-- UI localized text in English (default), Arabic (عربي), Brazilian Portuguese (Português brasileiro), Bulgarian, Catalan, Chinese, Czech, Danish, Dutch, Finnish, French (Français), German (Deutsch), Greek, Hebrew, Hindi (हिंदी), Hungarian, Indonesian, Irish (Gaeilge), Italian (Italiano), Japanese, Kiswahili, Korean, Malayalam, Myanmar (Burmese), Nepali (Nepalese), Norwegian (Norsk), Persian (فارسی), Polish, Punjabi (ਪੰਜਾਬੀ), Romanian, Russian, Slovak, Spanish (Español), Swedish, Thai, Turkish (Türkçe), Ukrainian (Українська) and Vietnamese.
+```scss
+:root {
+  --primary-color: #2563eb;      /* Brand blue */
+  --accent-color: #f59e0b;       /* Accent orange */
+  --text-color: #1f2937;         /* Dark text */
+  --background-color: #ffffff;   /* Light background */
+}
+```
 
-## Skins (color variations)
+Navigation (Edit /_data/navigation.yml)
 
-This theme comes in nine different skins (in addition to the default one).
+```yaml
+main:
+  - title: "Services"
+    url: /services/
+  - title: "Blog"
+    url: /posts/
+  - title: "Contact"
+    url: /contact/
+```
 
-| `air` | `contrast` | `dark` |
-| --- | --- | --- |
-| [![air skin](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/air-skin-archive-large.png) | [![contrast skin](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/contrast-skin-archive-large.png) | [![dark skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dark-skin-archive-large.png) |
+Services (Edit /_pages/services.md)
 
-| `dirt` | `mint` | `sunrise` |
-| --- | --- | --- |
-| [![dirt skin](https://mmistakes.github.io/minimal-mistakes/assets/images/dirt-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/dirt-skin-archive-large.png) | [![mint skin](https://mmistakes.github.io/minimal-mistakes/assets/images/mint-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/mint-skin-archive-large.png) | [![sunrise skin](https://mmistakes.github.io/minimal-mistakes/assets/images/sunrise-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/sunrise-skin-archive-large.png) |
+Update the services list and pricing in the markdown file.
 
-| `aqua` | `neon` | `plum` |
-| --- | --- | --- |
-| [![aqua skin](https://mmistakes.github.io/minimal-mistakes/assets/images/aqua-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/aqua-skin-archive-large.png) | [![neon skin](https://mmistakes.github.io/minimal-mistakes/assets/images/neon-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/neon-skin-archive-large.png) | [![plum skin](https://mmistakes.github.io/minimal-mistakes/assets/images/plum-skin-archive.png)](https://mmistakes.github.io/minimal-mistakes/assets/images/plum-skin-archive-large.png) |
+📧 Form Integrations
 
-## Demo pages
+1. Formspree (Newsletter/Contact)
 
-| Name                                        | Description                                           |
-| ------------------------------------------- | ----------------------------------------------------- |
-| [Post with Header Image][header-image-post] | A post with a large header image. |
-| [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
-| [Syntax Highlighting Post][syntax-post] | Post displaying highlighted code. |
-| [Post with a Gallery][gallery-post] | A post showing several images wrapped in `<figure>` elements. |
-| [Sample Collection Page][sample-collection] | Single page from a collection. |
-| [Categories Archive][categories-archive] | Posts grouped by category. |
-| [Tags Archive][tags-archive] | Posts grouped by tag. |
+· Endpoint: https://formspree.io/f/xldqaaoe
+· Dashboard: https://formspree.io
+· Emails sent to: maskintelligence@gmail.com
 
-Additional sample posts are available under [posts archive][year-archive] on the demo site. Source files for these (and the entire demo site) can be found in [`/docs`](docs).
+2. Form Setup
 
-[header-image-post]: https://mmistakes.github.io/minimal-mistakes/layout-header-image-text-readability/
-[gallery-post]: https://mmistakes.github.io/minimal-mistakes/post%20formats/post-gallery/
-[html-tags-post]: https://mmistakes.github.io/minimal-mistakes/markup/markup-html-tags-and-formatting/
-[syntax-post]: https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting/
-[sample-collection]: https://mmistakes.github.io/minimal-mistakes/recipes/chocolate-chip-cookies/
-[categories-archive]: https://mmistakes.github.io/minimal-mistakes/categories/
-[tags-archive]: https://mmistakes.github.io/minimal-mistakes/tags/
-[year-archive]: https://mmistakes.github.io/minimal-mistakes/year-archive/
+```html
+<form action="https://formspree.io/f/xldqaaoe" method="POST">
+  <input type="hidden" name="_subject" value="New Message">
+  <input type="email" name="email" required>
+  <button type="submit">Send</button>
+</form>
+```
 
-## Installation
+🔗 Social Media & RSS
 
-There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or forking/directly copying all of the theme files into your project.
+Connected Platforms:
 
-### Gem-based method
+· Facebook: https://facebook.com/profile.php?id=61586114142835
+· LinkedIn: https://linkedin.com/in/mask-intelligence-603348378
+· GitHub: https://github.com/maskintelligence-gif
+· Email: maskintelligence@gmail.com
+· Phone: +256 791 715 573
 
-With Gem-based themes, directories such as the `assets`, `_layouts`, `_includes`, and `_sass` are stored in the theme’s gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll’s build process.
+RSS Feed:
 
-This allows for easier installation and updating as you don't have to manage any of the theme files. To install:
+· URL: /feed.xml
+· Feedly: Pre-configured link in footer
+· Auto-updates: With each new post
 
-1. Add the following to your `Gemfile`:
+📝 Adding New Content
 
-   ```ruby
-   gem "minimal-mistakes-jekyll"
-   ```
+Blog Posts:
 
-2. Fetch and update bundled gems by running the following [Bundler](http://bundler.io/) command:
+```bash
+# Create new post
+_posts/YYYY-MM-DD-title.md
 
-   ```bash
-   bundle
-   ```
+# Front matter template:
+---
+title: "Post Title"
+date: YYYY-MM-DD
+categories: [Category]
+tags: [tag1, tag2]
+---
+```
 
-3. Set the `theme` in your project's Jekyll `_config.yml` file:
+Static Pages:
 
-   ```yaml
-   theme: minimal-mistakes-jekyll
-   ```
+```bash
+# Create new page
+_pages/page-name.md
 
-To update the theme run `bundle update`.
+# Layout options: single, splash, post
+```
 
-### Remote theme method
+🛠️ Maintenance
 
-Remote themes are similar to Gem-based themes, but do not require `Gemfile` changes or whitelisting making them ideal for sites hosted with GitHub Pages.
+Regular Updates:
 
-To install:
+1. Update services/pricing in services.md
+2. Add portfolio/case studies to _posts/
+3. Test all forms monthly
+4. Check broken links quarterly
 
-1. Create/replace the contents of your `Gemfile` with the following:
+Backup:
 
-   ```ruby
-   source "https://rubygems.org"
+· Automatic: GitHub repository
+· Manual: Download ZIP from GitHub
+· Content: All in markdown files
 
-   gem "github-pages", group: :jekyll_plugins
-   gem "jekyll-include-cache", group: :jekyll_plugins
-   ```
+📊 Analytics & SEO
 
-2. Add `jekyll-include-cache` to the `plugins` array of your `_config.yml`.
+Recommended Integrations:
 
-3. Fetch and update bundled gems by running the following [Bundler](https://bundler.io/) command:
+1. Google Analytics: Add to _includes/head/custom.html
+2. Search Console: Submit sitemap sitemap.xml
+3. Meta Tags: Configure in _config.yml
 
-   ```bash
-   bundle
-   ```
+SEO Checklist:
 
-4. Add `remote_theme: "mmistakes/minimal-mistakes@4.27.3"` to your `_config.yml` file. Remove any other `theme:` or `remote_theme:` entry.
+· Responsive design
+· Semantic HTML
+· Alt text for images
+· Meta descriptions
+· XML sitemap
+· RSS feed
 
-<!--
-  Dev note: The version number is currently hard-coded in these files:
+🤝 Contributing
 
-    - package.json
-    - README.md (this file)
-    - docs/_data/theme.yml
-    - docs/_pages/home.md (in Front Matter "excerpt")
+1. Fork the repository
+2. Create branch: git checkout -b feature/description
+3. Commit changes: git commit -m 'Add feature'
+4. Push: git push origin feature/description
+5. Pull Request
 
-  `package.json` holds the authoritative version number, and the others can be updated with `bundle exec rake version`.
+📞 Support
 
-  The following files should also be regenerated:
+Technical Issues:
 
-    - _includes/copyright.html, _includes/copyright.js, _sass/minimal-mistakes/_copyright.scss
-      (Run `bundle exec rake clean` then `bundle exec rake copyright` - all three references `package.json`)
-    - assets/js/main.min.js (Run `bundle exec rake js`, references `_includes/copyright.js`)
+· GitHub Issues: https://github.com/maskintelligence-gif/mask-intelligence-blog/issues
+· Email: maskintelligence@gmail.com
 
-  *Tip*: The default Rake task will update all of the above files at once.
+Business Inquiries:
 
-  Additionally, the license year is hard-coded in these files and are NOT covered by a Rake task:
+· WhatsApp: +256 791 715 573
+· Email: maskintelligence@gmail.com
+· Website: https://mask-intelligence.web.app
 
-    - README.md (this file, near the end)
-    - LICENSE
--->
+📄 License
 
-**Looking for an example?** Use the [Minimal Mistakes remote theme starter](https://github.com/mmistakes/mm-github-pages-starter/generate) for the quickest method of getting a GitHub Pages hosted site up and running. Generate a new repository from the starter, replace sample content with your own, and configure as needed.
+· Theme: MIT (Minimal Mistakes)
+· Content: © 2013-2025 Mask Intelligence
+· Code: Custom modifications proprietary to Mask Intelligence
 
-## Usage
+🏆 Credits
 
-For detailed instructions on how to configure, customize, add/migrate content, and more read the [theme's documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
+· Theme: Michael Rose (Minimal Mistakes)
+· Development: Mask Intelligence Team
+· Icons: Font Awesome
+· Hosting: GitHub Pages
 
-## Contributing
+---
 
-Found a typo in the documentation or interested in [fixing a bug](https://github.com/mmistakes/minimal-mistakes/issues)? Then by all means [submit an issue](https://github.com/mmistakes/minimal-mistakes/issues/new) or [pull request](https://help.github.com/articles/using-pull-requests/). If this is your first pull request, it may be helpful to read up on the [GitHub Flow](https://guides.github.com/introduction/flow/) first.
+Mask Intelligence – Unveiling Digital Potential Through Intelligent Solutions
 
-For help with using the theme or general Jekyll support questions, please use the [Jekyll Talk forums](https://talk.jekyllrb.com/).
+Last Updated: {{ site.time | date: '%B %d, %Y' }}
 
-### Pull Requests
+---
 
-When submitting a pull request:
+📋 Deployment Status
 
-1. Clone the repo.
-2. Create a branch off of `master` and give it a meaningful name (e.g. `my-awesome-new-feature`).
-3. Open a pull request on GitHub and describe the feature or fix.
+https://img.shields.io/github/deployments/maskintelligence-gif/mask-intelligence-blog/github-pages?label=GitHub%20Pages
+https://img.shields.io/badge/Jekyll-4.2.2-blue
+https://img.shields.io/badge/License-Proprietary-lightgrey
 
-Theme documentation and demo pages can be found in the [`/docs`](docs) if submitting improvements, typo corrections, etc.
+Live Site: https://maskintelligence-gif.github.io/mask-intelligence-blog/
+Business Site:https://mask-intelligence.web.app
 
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-To test the theme, run `bundle exec rake preview` and open your browser at `http://localhost:4000/test/`. This starts a Jekyll server using content in the `test/` directory. As modifications are made to the theme and test site, it will regenerate and you should see the changes in the browser after a refresh.
-
-## Credits
-
-### Creator
-
-**Michael Rose**
-
-- <https://mademistakes.com>
-- <https://twitter.com/mmistakes>
-- <https://github.com/mmistakes>
-
-### Icons + Demo Images:
-
-- [The Noun Project](https://thenounproject.com) - Garrett Knoll, Arthur Shlain, and [tracy tam](https://thenounproject.com/tracytam)
-- [Font Awesome](http://fontawesome.io/)
-- [Unsplash](https://unsplash.com/)
-
-### Other:
-
-- [Jekyll](http://jekyllrb.com/)
-- [jQuery](http://jquery.com/)
-- [Susy](http://susy.oddbird.net/)
-- [Breakpoint](http://breakpoint-sass.com/)
-- [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
-- [FitVids.JS](http://fitvidsjs.com/)
-- [GreedyNav.js](https://github.com/lukejacksonn/GreedyNav)
-- [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-- [Gumshoe](https://github.com/cferdinandi/gumshoe)
-- [jQuery throttle / debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/)
-- [Lunr](http://lunrjs.com)
-- [Clipboard.js](https://clipboardjs.com)
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2013-2024 Michael Rose and contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Minimal Mistakes incorporates icons from [The Noun Project](https://thenounproject.com/) 
-creators Garrett Knoll, Arthur Shlain, and tracy tam.
-Icons are distributed under Creative Commons Attribution 3.0 United States (CC BY 3.0 US).
-
-Minimal Mistakes incorporates [Font Awesome](http://fontawesome.io/),
-Copyright (c) 2017 Dave Gandy.
-Font Awesome is distributed under the terms of the [SIL OFL 1.1](http://scripts.sil.org/OFL) 
-and [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates photographs from [Unsplash](https://unsplash.com).
-
-Minimal Mistakes incorporates [Susy](http://susy.oddbird.net/),
-Copyright (c) 2017, Miriam Eric Suzanne.
-Susy is distributed under the terms of the [BSD 3-clause "New" or "Revised" License](https://opensource.org/licenses/BSD-3-Clause).
-
-Minimal Mistakes incorporates [Breakpoint](http://breakpoint-sass.com/).
-Breakpoint is distributed under the terms of the [MIT/GPL Licenses](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [FitVids.js](https://github.com/davatron5000/FitVids.js/),
-Copyright (c) 2013 Dave Rubert and Chris Coyier.
-FitVids is distributed under the terms of the [WTFPL License](http://www.wtfpl.net/).
-
-Minimal Mistakes incorporates [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/),
-Copyright (c) 2014-2016 Dmitry Semenov, http://dimsemenov.com.
-Magnific Popup is distributed under the terms of the MIT License.
-
-Minimal Mistakes incorporates [Smooth Scroll](http://github.com/cferdinandi/smooth-scroll),
-Copyright (c) 2019 Chris Ferdinandi.
-Smooth Scroll is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Gumshoejs](http://github.com/cferdinandi/gumshoe),
-Copyright (c) 2019 Chris Ferdinandi.
-Gumshoejs is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [jQuery throttle / debounce](http://benalman.com/projects/jquery-throttle-debounce-plugin/),
-Copyright (c) 2010 "Cowboy" Ben Alman.
-jQuery throttle / debounce is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [GreedyNav.js](https://github.com/lukejacksonn/GreedyNav),
-Copyright (c) 2015 Luke Jackson.
-GreedyNav.js is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Jekyll Group-By-Array](https://github.com/mushishi78/jekyll-group-by-array),
-Copyright (c) 2015 Max White <mushishi78@gmail.com>.
-Jekyll Group-By-Array is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [@allejo's Pure Liquid Jekyll Table of Contents](https://allejo.io/blog/a-jekyll-toc-in-liquid-only/),
-Copyright (c) 2017 Vladimir Jimenez.
-Pure Liquid Jekyll Table of Contents is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [Lunr](http://lunrjs.com),
-Copyright (c) 2018 Oliver Nightingale.
-Lunr is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-Minimal Mistakes incorporates [clipboard.js](https://clipboardjs.com/),
-Copyright (c) 2021 Zeno Rocha.
-Clipboard.js is distributed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+```
