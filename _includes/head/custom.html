@@ -1,5 +1,92 @@
-<!-- start custom head snippets -->
+<style>
+/* Social links styling */
+.social-follow {
+  margin: 2rem 0;
+  text-align: center;
+}
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+.social-icons-inline {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
 
-<!-- end custom head snippets -->
+.social-icons-inline a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons-inline a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-icons-inline .twitter { background: #1DA1F2; }
+.social-icons-inline .facebook { background: #1877F2; }
+.social-icons-inline .linkedin { background: #0077B5; }
+.social-icons-inline .instagram { background: #E4405F; }
+.social-icons-inline .github { background: #333; }
+.social-icons-inline .email { background: #EA4335; }
+.social-icons-inline .whatsapp { background: #25D366; }
+
+.social-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+</style>
+
+<!-- Add this where you want social links to appear -->
+<div class="social-follow" id="social-injection">
+  <div class="social-label">Follow Us</div>
+  <div class="social-icons-inline">
+    <a href="https://www.facebook.com/profile.php?id=61586114142835&mibextid=ZbWKwL" class="facebook" target="_blank" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://ug.linkedin.com/in/mask-intelligence-603348378" class="linkedin" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+      </a>
+    <a href="https://github.com/maskintelligence-gif" class="github" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:maskintelligence@gmail.com" class="email" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://tel:256791715573" class="phone" target="_blank" title="Phone">
+      <i class="fab fa-tel"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// Inject social links into sidebar automatically
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.querySelector('.sidebar');
+  const socialHTML = document.getElementById('social-injection').innerHTML;
+  
+  if (sidebar) {
+    // Create a new section for social links
+    const socialSection = document.createElement('div');
+    socialSection.className = 'social-sidebar-section';
+    socialSection.innerHTML = socialHTML;
+    
+    // Insert after author profile or at the beginning
+    const authorProfile = sidebar.querySelector('.author__content');
+    if (authorProfile) {
+      authorProfile.parentNode.insertBefore(socialSection, authorProfile.nextSibling);
+    } else {
+      sidebar.insertBefore(socialSection, sidebar.firstChild);
+    }
+  }
+});
+</script>
