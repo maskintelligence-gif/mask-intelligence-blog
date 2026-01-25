@@ -6,7 +6,7 @@ categories: [Business, Strategy]
 tags: [SEO, Organic Growth, ROI, Digital Marketing, Business Strategy]
 toc: true
 header:
-  teaser: /assets/images/teaser-placeholder.jpg
+  teaser: /assets/images/unlocking-the-organic-growth-engine-what-every-business-owne-header.png
 ---
 
 Imagine you are looking for a new office space. You have two options. 
