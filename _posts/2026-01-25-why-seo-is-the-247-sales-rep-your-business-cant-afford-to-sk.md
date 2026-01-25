@@ -6,7 +6,7 @@ date: 2026-01-25
 last_modified_at: 2026-01-25T15:02:00-05:00
 author: "MASK TEAM"
 header:
-  overlay_image: "/assets/images/seo-24-7-sales-rep.jpg"
+  overlay_image: "/assets/images/seo-24-7-sales-rep.png"
   overlay_filter: "rgba(0, 0, 0, 0.5)"
   caption: "MASK INTELLIGENCE"
 categories:
