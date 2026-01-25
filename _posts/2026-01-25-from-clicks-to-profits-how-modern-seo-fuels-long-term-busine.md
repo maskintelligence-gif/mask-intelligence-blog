@@ -6,7 +6,7 @@ date: 2026-01-25
 last_modified_at: 2026-01-25T11:51:00-05:00
 author: "MASK TEAM"
 header:
-  overlay_image: /assets/images/from-clicks-to-profits.jpg
+  overlay_image: /assets/images/from-clicks-to-profits-how-modern-seo-fuels-long-term-busine-header.png
   overlay_filter: "rgba(0, 0, 0, 0.5)"
   caption: "MASK INTELLIGENCE"
 categories:
