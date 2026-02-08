@@ -127,7 +127,7 @@ If 80% of your PPC conversions come from people searching your company name, you
 ### 5. "If we turned off ads tomorrow, what percentage of our revenue disappears?"
 This is the ultimate stress test. If the answer is "80%," your business is fragile. Your goal should be to get this number down to 30-40% over time.
 
-## Conclusion: The Power of Balance
+## **The Power of Balance**
 
 The war between Sustainable Growth (SEO) and Quick Wins (PPC) is a fabrication. Successful businesses do not choose sides; they sequence them.
 
