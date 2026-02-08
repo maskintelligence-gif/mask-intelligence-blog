@@ -1,4 +1,3 @@
-```markdown
 ---
 layout: single
 title: "Sustainable Growth vs. Quick Wins: Navigating SEO and Paid Media at Every Business Stage"
