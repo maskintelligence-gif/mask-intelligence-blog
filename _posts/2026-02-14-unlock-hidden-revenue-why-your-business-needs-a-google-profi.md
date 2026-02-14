@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Unlock Hidden Revenue: Why Your Business Needs a Google Profile to Scale (Storefront or Not)"
-excerpt: "Discover why a Google Business Profile is your most profitable asset in 2025. Learn how to capture zero-click searches and drive revenue, even without a physical storefront."
+excerpt: "Discover why a Google Business Profile is your most profitable asset in 2026. Learn how to capture zero-click searches and drive revenue, even without a physical storefront."
 date: 2026-02-14
 last_modified_at: 2026-02-14T10:30:00-05:00
 author: "MASK TEAM"
