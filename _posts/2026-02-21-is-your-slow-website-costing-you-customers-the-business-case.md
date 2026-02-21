@@ -2,8 +2,8 @@
 layout: single
 title: "Is Your Slow Website Costing You Customers? The Business Case for Optimization"
 excerpt: "Speed isn't just a technical metric; it's a revenue metric. Learn how latency kills conversions and how Mask Intelligence fixes it."
-date: 2024-09-16
-last_modified_at: 2024-09-16T14:30:00-05:00
+date: 2026-02-21
+last_modified_at: 2026-02-21T14:30:00-05:00
 author: "MASK TEAM"
 header:
   overlay_image: "/assets/images/optimizing-website-performance-for-business-growth.jpg"
